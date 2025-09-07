@@ -7,6 +7,12 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 
+const corsOptions = {
+  origin: ['http://localhost:3000'],
+  optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions));
+
 const mongoose = require('mongoose')
 // mongoose.connect('mongodb://0.0.0.0:27017/SocialMedia')
 mongoose.connect(process.env.MONGO_URL)
