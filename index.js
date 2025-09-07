@@ -8,9 +8,16 @@ const cors = require("cors");
 app.use(cors());
 
 const corsOptions = {
-  origin: ['http://localhost:3000'],
-  optionsSuccessStatus: 200
-}
+  origin: [
+    'http://localhost:3000',
+    'https://fancy-alfajores-b52bf1.netlify.app',
+    'https://diddy-deals.netlify.app'
+  ],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
 app.use(cors(corsOptions));
 
 const mongoose = require('mongoose')
